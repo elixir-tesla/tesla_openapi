@@ -624,8 +624,7 @@ defmodule Tesla.OpenApi.GenTest do
           end
 
           def decode(data) do
-            with {:ok, id} <- {:ok, data["id"]},
-                 {:ok, name_of} <- {:ok, data["nameOf"]} do
+            with {:ok, id} <- {:ok, data["id"]}, {:ok, name_of} <- {:ok, data["nameOf"]} do
               {:ok, %__MODULE__{id: id, name_of: name_of}}
             end
           end
