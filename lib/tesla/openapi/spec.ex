@@ -275,7 +275,7 @@ defmodule Tesla.OpenApi.Spec do
   defp models(%{"components" => _}), do: []
 
   defp models(defs) when is_map(defs) do
-    for {name, schema} <- defs do
+    for {name, schema} when is_map(schema) <- defs do
       %Model{
         name: name,
         title: schema["title"],
